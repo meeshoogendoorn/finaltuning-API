@@ -1,0 +1,73 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+body {
+    background-color: #06182d;
+}
+
+.dark-card {
+    background-color: #06182d;
+    opacity: 0.8;
+}
+
+.main-table {
+    color: #fff;
+}
+
+.card-header {
+    color: #fff;
+}
+
+.card-body {
+    color: #fff;
+}
+
+label {
+    color: #fff;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #fff;
+    color: #06182d;
+}
+
+.btn-outline-primary, .btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:visited {
+    color: #fff;
+    border-color: #fff;
+}
+
+.btn-outline-primary:hover {
+    background-color: #fff;
+    color: #06182d;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active, .show > .btn-outline-primary.dropdown-toggle {
+    color: #06182d;
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.navbar-nav li {
+    margin-right: 10px;
+}
+
+.hideOnMobile {
+    display: none;
+}
+
+.navbar-toggler {
+    background-color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+    .hideOnMobile {
+        clear: both;
+        display: block;
+    }
+}
