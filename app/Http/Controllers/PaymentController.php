@@ -34,7 +34,9 @@ class PaymentController extends Controller
         $payment->save();
         $user = User::findOrFail($request->user_id);
         $info = UserApiInfo::findOrFail($user->user_api_info->id);
-        $api_request = ApiRequest::where("user_id", "=", $user->id);
+        $api_request = ApiRequest::where("user_id", "=", $user->id)->first();
+        if(empty($api_request))
+            $api_request = new ApiRequest(['user_id' => $user->id]);
         $api_request->requests = 0;
         $api_request->save();
         $info->payment_status = 1;
