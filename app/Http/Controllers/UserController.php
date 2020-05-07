@@ -41,6 +41,9 @@ class UserController extends Controller
         $info = $user->user_api_info;
         if($info->payment_status === $status)
             return redirect()->route("users.index")->with("action_success", "Payment not updated because same value");
+        $request_info = ApiRequest::where("user_id", "=", $user->id)->first();
+        $request_info->requests = 0;
+        $request_info->save();
 
         $info = UserApiInfo::findOrFail($info->id);
         $info->payment_status = $status;

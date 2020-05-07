@@ -18,6 +18,7 @@ class CreateApiRequestsTable extends Migration
             $table->bigInteger('user_id');
             $table->bigInteger('max_requests')->nullable();
             $table->bigInteger('requests')->nullable()->default(0);
+            $table->bigInteger('all_time_requests')->nullable();
             $table->timestamps();
         });
     }
