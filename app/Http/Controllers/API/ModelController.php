@@ -9,9 +9,9 @@ class ModelController extends BaseController
 {
     public function index($manufacturer)
     {
-        $models = Car::distinct("model001")
+        $models = Car::distinct("model")
             ->where("manufacturer", "=", $manufacturer)
-            ->pluck("model001");
+            ->pluck("model");
 
         return $this->sendResponse($models, "Successfully indexed models from ${manufacturer}");
     }
