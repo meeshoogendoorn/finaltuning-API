@@ -21,7 +21,7 @@ class BaseController extends Controller
         ];
 
 
-        return response()->json($response, 200);
+        return response()->json($response, 200)->header("Access-Control-Allow-Origin", "*");
     }
 
 
@@ -43,6 +43,6 @@ class BaseController extends Controller
         }
 
 
-        return response()->json($response, $code);
+        return response()->json($response, $code)->header("Access-Control-Allow-Origin", "*");
     }
 }
