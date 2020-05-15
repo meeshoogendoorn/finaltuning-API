@@ -10,7 +10,6 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
     <link rel="shortcut icon" href="{{ asset("images/favicon.png") }}">
 
 
@@ -58,6 +57,7 @@
                         @if(auth()->user() && empty(auth()->user()->api_token))
                                 <li><a href="{{ route("token.create") }}" class="btn btn-outline-primary">API Key aanmaken</a></li>
                         @endif
+                            <li><a href="{{ route("tuners.info") }}" class="btn btn-outline-primary">Voor Tuners</a></li>
                             <li><a href="{{ route("docs") }}" class="btn btn-outline-primary">DOCS bekijken</a></li>
                     </ul>
 
@@ -101,5 +101,7 @@
             @yield('content')
         </main>
     </div>
+    <script src="{{ asset('js/app.js') }}"></script>
+    @stack("js")
 </body>
 </html>

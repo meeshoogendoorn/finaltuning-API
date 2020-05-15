@@ -22,3 +22,7 @@ Route::middleware('apiTokenAuth')->group( function () {
     Route::get('/result/{id}', 'API\ResultController@index');
     Route::get('/info/{id}', 'API\ResultController@getTuneInfo');
 });
+
+Route::middleware("auth")->group(function(){
+
+});

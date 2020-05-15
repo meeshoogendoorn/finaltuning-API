@@ -19,8 +19,17 @@ Route::get('/docs', function(){
     return view("docs");
 })->name('docs');
 
+Route::get("/tuners/info", "InfoController@getInfo")->name("tuners.info");
+
 Route::resource('users', 'UserController', ["except" => "destroy"]);
 Route::resource('payments', 'PaymentController');
+
+Route::middleware("auth")->group(function(){
+    Route::get("/auth/models/{manufacturer}", "Api\ModelController@index");
+    Route::get("/auth/generations/{manufacturer}/{model}", "Api\GenerationController@index");
+    Route::get("/auth/engines/{engine_id}", "Api\EngineController@index");
+    Route::get("/auth/info/{id}", "Api\ResultController@getTuneInfo");
+});
 
 
 Route::get("/users/delete/{id}", "UserController@destroy")->name("user.delete");
