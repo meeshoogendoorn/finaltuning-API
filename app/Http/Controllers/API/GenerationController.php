@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\API;
 
 use App\Car;
+use Illuminate\Support\Facades\DB;
 
 class GenerationController extends BaseController
 {
     public function index($manufacturer, $model)
     {
-        $generations = Car::distinct("generation")
+        $generations = Car::select("generation", "id")
+            ->groupBy("generation")
             ->where("manufacturer", "=", $manufacturer)
             ->where("model", "=", $model)
             ->get();
