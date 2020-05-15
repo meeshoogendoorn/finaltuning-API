@@ -25,10 +25,10 @@ Route::resource('users', 'UserController', ["except" => "destroy"]);
 Route::resource('payments', 'PaymentController');
 
 Route::middleware("auth")->group(function(){
-    Route::get("/auth/models/{manufacturer}", "Api\ModelController@index");
-    Route::get("/auth/generations/{manufacturer}/{model}", "Api\GenerationController@index");
-    Route::get("/auth/engines/{engine_id}", "Api\EngineController@index");
-    Route::get("/auth/info/{id}", "Api\ResultController@getTuneInfo");
+    Route::get("/auth/models/{manufacturer}", "API\ModelController@index");
+    Route::get("/auth/generations/{manufacturer}/{model}", "API\GenerationController@index");
+    Route::get("/auth/engines/{engine_id}", "API\EngineController@index");
+    Route::get("/auth/info/{id}", "API\ResultController@getTuneInfo");
 });
 
 
